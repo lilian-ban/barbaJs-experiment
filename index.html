@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body data-barba="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="about.html">Page de test</a></li>
+                </ul>
+            </nav>
+        </header>
+        <ul class="transition">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <main data-barba="container" data-barba-namespace="home">
+            <p>Man lives in the sunlit world of what he believes to be reality. But, there is, unseen by most, an underworld, a place that is just as real, but not as brightly lit... a darkside. The darkside is always there, waiting for us to enter, waiting to enter us. So until next time, try to enjoy the daylight.
+
+                Once in every lifetime, comes a love like this. Oh I need you, you need me, oh my darling can't you see. Young Ones. Darling we're the Young Ones. Young Ones. Shouldn't be afraid. To live, love, there's a song to be sung. Cause we may not be the Young Ones very long.
+                
+                He was once a little green slab of clay. Gumby! You should see what Gumby can do today. Gumby! He can walk into any book, with his pony pal Pokey, too. If you've got a heart then Gumby's a part of you.
+                
+            </p>
+        </main>
+        <footer>
+            Test du footer
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+        <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+        <script>
+
+            function leaveTransi() {
+                let tl = gsap.timeline();
+                tl.to('ul.transition li',{ duration: .5, scaleY: 1, transformOrigin: "top left", stagger: .2})
+                tl.to('ul.transition li',{ duration: .5, scaleY: 0, transformOrigin: "top left", stagger: .1, delay:.2})
+            }
+
+            
+            barba.init({
+                transitions: [{
+                leave(data) {
+                    leaveTransi();
+                }
+
+            }]
+            });
+        </script>
+    </body>
+</html>

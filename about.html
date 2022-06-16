@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body data-barba="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="about.html">Page de test</a></li>
+                </ul>
+            </nav>
+        </header>
+        <ul class="transition">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <main data-barba="container" data-barba-namespace="home">
+            <p>
+                Style a test
+            </p>
+        </main>
+        <footer>
+            Test du footer
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+        <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+        <script>
+
+            function leaveTransi() {
+                let tl = gsap.timeline();
+                tl.to('ul.transition li',{ duration: .5, scaleY: 1, transformOrigin: "top left", stagger: .2})
+                tl.to('ul.transition li',{ duration: .5, scaleY: 0, transformOrigin: "top left", stagger: .1, delay:.2})
+            }
+
+            
+            barba.init({
+                transitions: [{
+                leave(data) {
+                    leaveTransi();
+                }
+            }]
+            });
+        </script>
+        <!-- <script type="module" src="js/transi.js"></script> -->
+    </body>
+</html>

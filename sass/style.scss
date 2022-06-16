@@ -1,0 +1,25 @@
+// Create subfolder to split sass files
+// @import "subfolder/subfile";
+body {
+  height: 99vh;
+}
+
+.transition {
+  display: flex;
+  height: 100vh;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  li {
+    background-color: #242744;
+    list-style-type: none;
+    transform: scaleY(0);
+    width: 20%;
+  }
+}
